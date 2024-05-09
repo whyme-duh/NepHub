@@ -1,0 +1,59 @@
+{% extends 'core/index.html' %}
+
+{% block content %}
+<div class="banner">
+    <img src="/media/websiteimage/banner.jpg" alt="banner" class="banner-img">
+    <div class="banner-info">
+        <div class="banner-info-text">
+            <h1>Your Gateway to <br>Essential Links</h1>
+            <p>Streamline your exploration with our curated collection of vital links</p>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search services..">
+            <i class="fa fa-search"></i>
+        </div>
+        <!-- <a href="" class="btn-top-sites">Top Sites</a> -->
+    </div>
+</div>
+<div class="search-bar">
+    <input type="text">
+</div>
+<div class="healthcare">
+    <div class="topPart">
+        <div class="title-part">
+            {% for ob in categories %}
+            {% if ob.category_name == "Medical Field" %}
+            <img src="{{ob.icon.url}}" alt="icon" class="category-icon">
+            {% endif %}
+            {% endfor %}
+            <h1 class="sectionTitle">Health Care Links</h1>
+        </div>
+        <a href=""><button class="more-btn">More</button></a>
+    </div>
+    <ol class="list">
+        {% for ob in links %}
+        {% if ob.category.category_name == "Medical Field" %}
+        <li><a href="{{ob.link}}" title="{{ob.link}}">{{ob.name}}</a></li>
+        {% endif %}
+        {% endfor%}
+
+    </ol>
+</div>
+<div class="internetservice">
+    <h1 class="sectionTitle">Internet Service Links</h1>
+</div>
+<div class="education">
+    <h1 class="sectionTitle">Education Links</h1>
+    <ol class="list">
+        {% for ob in links %}
+        {% if ob.category.category_name == "Education Field" %}
+        <li><a href="{{ob.link}}" title="{{ob.link}}">{{ob.name}}</a></li>
+        {% endif %}
+        {% endfor%}
+
+    </ol>
+</div>
+<div class="bankservices">
+    <h1 class="sectionTitle">Bank Links</h1>
+</div>
+{% endblock %}
