@@ -43,6 +43,13 @@ a{
     left: 30%;
     top: 35%;
     color: white;
+    background-color: none;
+
+}
+.search-bar button{
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 input::placeholder{
     color:white;
@@ -141,10 +148,11 @@ ul{
 }
 .more-btn{
     background: white;
-    padding-block: 1em;
+    padding-block: 0.75em;
     padding-inline:2em;
+    border: none;
     border-radius: 5px;
-    border-color: aqua;
+    background-color: rgb(212, 207, 207);
 }
 .more-btn:hover{
     background-color: rgb(169, 255, 255);
