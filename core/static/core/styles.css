@@ -3,9 +3,17 @@
 *{
     margin: 0;
 }
+body{
+    min-height: 100vh;
+}
 :root{
     --inline-margin: 10.5%;
     --section-title-size: 2em;
+    --banner-title-size: 3em;
+    --banner-paragraph-size: 1.25em;
+    --category-name-size:1.15em;
+    --link-namuber-size:1em;
+
     --section-font-family: "Freeman", sans-serif;
 }
 header{
@@ -17,6 +25,12 @@ header{
 }
 a{
     text-decoration: none;
+}
+
+.nav-links .nav-icon{
+    display:none;
+    font-size: 1.5em;
+
 }
 .logo-box{
     width: 10%;
@@ -69,6 +83,10 @@ ul{
     display: flex;
     align-items: center;
 }
+.main{
+    margin-top: 2em;
+    margin-inline:10%;
+}
 .nav-items{
     padding: 1.25em;
 }
@@ -107,12 +125,12 @@ ul{
 }
 .banner-info h1{
     color: rgb(255, 255, 255);
-    font-size: 3em;
+    font-size: var( --banner-title-size);
     font-weight: 900;
 }
 .banner-info p{
     margin-top: 1em;
-    font-size: 1.25em;
+    font-size: var(--banner-paragraph-size);
     margin-bottom: 2em;
     color: white;
 }
@@ -175,4 +193,104 @@ ul{
 li a{
     color: black;
     font-size: 1.15em;
+}
+
+/* categories */
+.categories-list{
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 3.5em;
+}
+.card{
+    background-color:rgb(90, 233, 233) ;
+    display: flex;
+    width: 20%;
+    align-items: center;
+    padding: 1em;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+.link-number{
+    font-size: var(--link-namuber-size);
+    color: rgb(73, 73, 73);
+}
+.category-name{
+    font-size:var( --category-name-size);
+}
+/* footer */
+footer{
+    
+    background-color: aqua;
+}
+
+
+@media only screen and (max-width:400px){
+    :root{
+        --inline-margin: 10.5%;
+        --section-title-size: 1.5em;
+        --banner-title-size:2em;
+        --banner-paragraph-size: 1em;
+        --category-name-size:0.7em;
+        --link-number-size:0.5em;
+        --section-font-family: "Freeman", sans-serif;
+    }
+    .logo-box{
+        width: 50%;
+    }
+    .nav-links .nav-items{
+        display: none;
+    }
+    .nav-links .nav-icon{
+        display: block;
+        color: black;
+    }
+    .nav-links.reponsive{
+        position:relative;
+    
+    }
+    .nav-links.responsive .nav-icon{
+        right: 0;
+        left: 0;
+    }
+    .nav-links.responsive ul{
+        position: absolute;
+        top: 8.25%;
+        z-index: 100;
+        margin: 0;
+        left: 0;
+        padding: 0;
+        display: flex;
+        background-color: white;
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-links.responsive .nav-items{
+        display: inline;
+    }
+    
+    .banner{
+        height: 40vh;
+    }
+    .search-bar input{
+        width: 90%;
+    }
+    .fa-search{
+        left: 90%;
+    }
+    .list{
+        display: block;
+    }
+    .categories-list{
+        display: block;
+        margin: 0;
+        gap: 2em;
+        padding: 0;
+    }
+    .card{
+        width: 80%;
+        margin:1em;
+    }
 }

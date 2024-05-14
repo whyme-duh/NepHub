@@ -1,7 +1,8 @@
-from . views import home, categories
+from . import views
 from django.urls import path
 
 urlpatterns = [
-    path('',home, name='home'),
-    path('categories/',categories, name='categories')
+    path('',views.home, name='home'),
+    path('categories/', views.categories, name = "categories"),
+    path('<slug:slug>/', views.categories_detail, name = "detail-page"),
 ]

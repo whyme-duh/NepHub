@@ -1,4 +1,16 @@
 {% extends 'core/index.html' %}
 {% block content %}
-
+<div class="main">
+    {% for obj in links|slice:1 %}
+    <div class="title-part">
+        <img src="{{obj.category.icon.url}}" alt="icon" class="category-icon">
+        <h1 class="sectionTitle">{{obj.category.category_name}}</h1>
+    </div>
+    {% endfor%}
+    <ul class="categories-list">
+        {% for obj in links %}
+        <a href="{{obj.link}}" class="card"><li >{{obj.name}}</li></a>
+        {% endfor%}
+    </ul>
+</div>
 {% endblock %}

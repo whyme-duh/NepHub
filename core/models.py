@@ -3,6 +3,7 @@ from django.db import models
 class Category(models.Model):
     # this is a model for a category class. Such as medical, education, ISP, etc.
     category_name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, blank = True, null= True)
     icon = models.ImageField(upload_to='icon')
 
     def __str__(self):

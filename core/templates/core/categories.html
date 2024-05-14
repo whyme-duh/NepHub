@@ -1,4 +1,18 @@
 {% extends 'core/index.html' %}
 {% block content%}
-<h1>Categories</h1>
+<div class="main">
+    <h1 class="sectionTitle">Categories</h1>
+    <ul class="categories-list">
+        {% for object in categories %}
+        
+        <li class="card">
+            <div class="title-part">
+                <img src="{{object.icon.url}}" alt="icon" class="category-icon">
+                <a href="{% url 'detail-page' object.slug %}"><h3 class="category-name">{{object.category_name}}</h3></a>
+            </div>
+            <p class="link-number">50 Links</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}

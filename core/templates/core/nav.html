@@ -1,14 +1,15 @@
 <nav>
     <div class="logo-box">
-        <a href="#"><img src="/media/websiteimage/logo.png" alt="logo" class="logo"></a>
+        <a href="{% url 'home'%}"><img src="/media/websiteimage/logo.png" alt="logo" class="logo"></a>
     </div>
    
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
         <ul>
             <li class="nav-items"><a href="{% url 'home' %}">Home</a></li>
             <li class="nav-items"><a href="{% url 'categories' %}">Categories</a></li>
-            <li class="nav-items"><a href="">Blog</a></li>
-            <li class="nav-items"><a href="">About Us</a></li>
+            <li class="nav-items"><a href="#">Blog</a></li>
+            <li class="nav-items"><a href="#">About Us</a></li>
         </ul>
+        <a href="javascript:void(0);" class="nav-icon" onclick="navFunction()"><i class="fa fa-bars"></i></a>
     </div>
 </nav>

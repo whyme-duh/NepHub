@@ -15,45 +15,52 @@
         <!-- <a href="" class="btn-top-sites">Top Sites</a> -->
     </div>
 </div>
-<div class="search-bar">
-    <input type="text">
-</div>
+
 <div class="healthcare">
     <div class="topPart">
         <div class="title-part">
-            {% for ob in categories %}
-            {% if ob.category_name == "Medical Field" %}
+            {% for ob in categories%}
+            {% if ob.category_name == "Health Field" %}
             <img src="{{ob.icon.url}}" alt="icon" class="category-icon">
+            <a href="{% url 'detail-page' ob.slug%}"><h1 class="sectionTitle">Health Care Links</h1></a>
             {% endif %}
             {% endfor %}
-            <a href=""><h1 class="sectionTitle">Health Care Links</h1></a>
+
         </div>
         <!-- <a href=""><button class="more-btn">More</button></a> -->
     </div>
     <ol class="list">
         {% for ob in links %}
-        {% if ob.category.category_name == "Medical Field" %}
+        {% if ob.category.category_name == "Health Field" %}
         <li><a href="{{ob.link}}" title="{{ob.link}}">{{ob.name}}</a></li>
         {% endif %}
         {% endfor%}
 
     </ol>
 </div>
-<div class="internetservice">
-    <h1 class="sectionTitle">Internet Service Links</h1>
-</div>
+
 <div class="education">
-    <h1 class="sectionTitle">Education Links</h1>
+    <div class="topPart">
+        <div class="title-part">
+            {% for ob in categories%}
+            {% if ob.category_name == "Education Field" %}
+            <img src="{{ob.icon.url}}" alt="icon" class="category-icon">
+            <a href="{% url 'detail-page' ob.slug%}"><h1 class="sectionTitle">Education Links</h1></a>
+            {% endif %}
+            {% endfor %}
+
+        </div>
+        <!-- <a href=""><button class="more-btn">More</button></a> -->
+    </div>
     <ol class="list">
         {% for ob in links %}
         {% if ob.category.category_name == "Education Field" %}
         <li><a href="{{ob.link}}" title="{{ob.link}}">{{ob.name}}</a></li>
+        {{ob.slug}}
         {% endif %}
         {% endfor%}
 
     </ol>
 </div>
-<div class="bankservices">
-    <h1 class="sectionTitle">Bank Links</h1>
-</div>
+
 {% endblock %}
