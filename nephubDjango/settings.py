@@ -32,7 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*', 'web-production-4753.up.railway.app', "192.168.1.69:5000"]
 
-CSRF_TRUSTED_ORIGINS = ['https://nephub.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['https://nephub.up.railway.app/admin/login/?next=/admin/']
 
 
 # Application definition
