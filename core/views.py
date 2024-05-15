@@ -13,6 +13,7 @@ def home(request):
 
 
 def categories(request):
+    
     return render(request, 'core/categories.html', {"categories": Category.objects.all()})
 
 

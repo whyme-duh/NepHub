@@ -28,9 +28,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*', 'web-production-4753.up.railway.app', "192.168.1.69:5000"]
+
+CSRF_TRUSTED_ORIGINS = ['https://nephub.up.railway.app/']
 
 
 # Application definition
@@ -38,6 +40,7 @@ ALLOWED_HOSTS = ['*', 'web-production-4753.up.railway.app', "192.168.1.69:5000"]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'core',
+    'corsheaders',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
